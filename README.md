@@ -1,5 +1,6 @@
-# fastapi-template
-This project is intended to be a fastapi boilerplate for projects.
+# fastapi-base-project
+This project is intended to be a fastapi basic initial setup for my projects.
+The configurations are the bare minimun that I tend to use in my projects.
 
 
 
