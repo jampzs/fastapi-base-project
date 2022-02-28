@@ -2,19 +2,18 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import settings
+from app.api.routes import api_router
 
 
 def get_application() -> FastAPI:
     _app = FastAPI(
         title=settings.PROJECT_NAME,
         description='This is your docs example!',
-        version='0.0.1',
-        docs_url='/docs'
+        version='0.0.1'
     )
 
-    @_app.get("/")
-    async def init():
-        return {"initial_config": "Its working!"}
+    # Routes in our app
+    _app.include_router(api_router)
 
     _app.add_middleware(
         CORSMiddleware,
