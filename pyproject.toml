@@ -1,0 +1,53 @@
+[tool.poetry]
+name = "fastapi-base-project"
+version = "0.1.0"
+description = ""
+authors = ["jampzs <jp.ortunes99@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "*"
+asyncpg = "*"
+sqlmodel = "*"
+uvicorn = "*"
+pydantic = {version = "*", extras = ["dotenv"]}
+alembic = "*"
+
+[tool.poetry.dev-dependencies]
+pytest = "*"
+pytest-cov = "*"
+blue = "0.5.2"
+flake8 = "*"
+flake8-debugger = "*"
+flake8-pytest-style = "*"
+isort = "*"
+mypy = "*"
+pep8-naming = "*"
+pyupgrade = "*"
+bandit = "*"
+pip-audit = "*"
+autoflake = "*"
+pre-commit = "*"
+commitizen = "*"
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.blue]
+line-length = 100
+
+[tool.pytest.ini_options]
+python_files = "test_*.py"
+testpaths = "tests/"
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.mypy]
+ignore_missing_imports = true
+disallow_untyped_defs = true
+exclude = "(app/db/migrations)"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

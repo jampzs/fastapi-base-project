@@ -1,0 +1,8 @@
+[run]
+source = fastapi-base-project
+
+[report]
+omit =
+    */python?.?/*
+    */site-packages/nose/*
+    fastapi-base-project/__main__.py
